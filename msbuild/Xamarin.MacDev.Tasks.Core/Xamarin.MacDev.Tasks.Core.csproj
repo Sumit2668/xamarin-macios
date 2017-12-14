@@ -52,8 +52,8 @@
   </ItemGroup>
   <ItemGroup>
     <!-- XBuild does not define the MSBuildRuntimeVersion property. -->
-    <Compile Include="MsBuildTasks\MoveTaskBase.cs" Condition="'$(MSBuildRuntimeVersion)' != ''" />
-    <Compile Include="MsBuildTasks\XBuildMoveTaskBase.cs" Condition="'$(MSBuildRuntimeVersion)' == ''" />
+    <Compile Include="MsBuildTasks\MoveTaskBase.cs" Condition="'$(OS)' == 'Windows_NT'" />
+    <Compile Include="MsBuildTasks\XBuildMoveTaskBase.cs" Condition="'$(OS)' != 'Windows_NT'" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MsBuildTasks\CopyBase.cs" />
